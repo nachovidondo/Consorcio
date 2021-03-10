@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>Listado de Edificios </h2>
+
+
+<table class="default">
+    {% for edificio in edificios %}
+    <tr>
+        <td>
+            <a href="{% url 'detalle_edificio'  %}?lang={{edificio.id}}">{{edificio.nombre}}</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

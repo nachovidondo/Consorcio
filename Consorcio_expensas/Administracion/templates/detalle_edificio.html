@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2 align="center">Listado de Detalle del edificio </h2>
+
+<br>
+<table class="default" border="3" align="center">
+
+
+    <tr>
+
+        <th>Departamento PH</th>
+
+        <th>Deuda del mes</th>
+
+        <th>Total Deuda</th>
+
+    </tr>
+    {% for depto in Departamento %}
+
+
+    <tr>
+        <td>
+            {{depto.ph}}
+        </td>
+        <td>
+            {{depto.deuda_mes}}
+        </td>
+        <td>
+            {{depto.total_deuda}}
+        </td>
+        <td>
+            <a href="{% url 'editar_dpto' depto.id %}" class="btn btn-info"><button>Editar</button></a>
+        </td>
+        <td>
+            <a href="#" class="btn btn-info "><button>Generar Expensa</button></a>
+        </td>
+
+
+    </tr>
+    {% endfor %} </table>
+
+{% endblock %}

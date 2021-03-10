@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Listado de Edificios Administrados</h1>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12 search">
+            <form method="get">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text " class="form-control " placeholder="Buscar.. " id="name " nombre="buscar">
+                        <span class="input-group-list ">
+                                <i class ="icon icon search ">
+
+                                </i>
+                                <button type ="submit " class ="boton btn-success">Buscar</button>
+                            </span>
+
+
+                    </div>
+            </form>
+
+            </div>
+        </div>
+        <div>{% if expensas %} {{expensas.depto_ph}}{% endif %}</div>
+
+
+
+        </body>
+
+        </html>

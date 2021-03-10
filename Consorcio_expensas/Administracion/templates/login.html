@@ -1,0 +1,13 @@
+{% load crispy_forms_tags %}
+
+<form method="POST" autocomplete=off class="mt-2" action="">
+    {% csrf_token %}
+    <h1 class="h3 mb-3 font-weight-normal">Ingresar</h1>
+    <label for="inputEmail" class="form-signin">Usuario :</label>
+    <p>{{form.username}}</p>
+    <label for="inputPassword " class="form-signin">Contraseña :</label>
+    <p>{{form.password}}</p>
+    <br>
+
+    <button type="submit" class="btn btn-success">Entrar</button>
+</form>
