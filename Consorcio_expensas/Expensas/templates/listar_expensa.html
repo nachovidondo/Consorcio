@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>Listado de Expensas </h2>
+
+
+<table class="default">
+    {% for expensa in expensas %}
+    <tr>
+        <td>
+            <a href="#">{{expensa.edificio_expensa}}</a>
+        </td>
+        <td>
+            <a href="#">{{expensa.id}}</a>
+        </td>
+        <td>
+            <a href="#">{{expensa.create_date}}</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
