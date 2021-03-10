@@ -39,7 +39,7 @@ class DepartamentoUpdateView(UpdateView):
     model = Departamento
     template_name = 'editar_dpto.html'
     form_class = DepartamentoForm
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('detalle_edificio')
 
 class Expensa(View):
     def get(self,request,*args,**kwargs):
