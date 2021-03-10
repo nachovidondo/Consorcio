@@ -6,7 +6,7 @@ from Administracion.models import Departamento,Edificio
  
 class Expensas(models.Model):
  
-    depto_ph = models.ForeignKey(Departamento,on_delete=models.CASCADE,blank = True, null = True)
+    
     edificio_expensa= models.ForeignKey(Edificio,on_delete=models.CASCADE,verbose_name="Edificio",blank = True, null = True)
     # Monto Ingresos
     expensas_puras = models.FloatField(verbose_name="Expensas Puras",blank = True, null = True)
@@ -33,7 +33,7 @@ class Expensas(models.Model):
     sueldo_anual_complementario = models.FloatField(verbose_name="Sueldo Anual Complementario",blank = True, null = True)
     total_gastos = models.FloatField(verbose_name="Total de Gastos (Egreso) ",blank = True, null = True, default=0)
     create_date = models.DateTimeField(auto_now=True,verbose_name="Fecha Creacion")
-    porcentaje_correspondiente_dpto = models.FloatField(verbose_name="Porcentaje Correspondiente Departamento",blank = True, null = True)
+    porcentaja_departamento = models.ForeignKey(Departamento,on_delete=models.CASCADE,blank = True, null = True)
     
     
 

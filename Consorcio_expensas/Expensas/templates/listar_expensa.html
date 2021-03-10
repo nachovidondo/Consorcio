@@ -15,6 +15,16 @@
         <td>
             <a href="#">{{expensa.create_date}}</a>
         </td>
+        <td>
+            <a href="{% url 'editar_expensa' expensa.id %}">
+                <button type="submit">Editar</button>
+            </a>
+        </td>
+        <td>
+            <a href="{% url 'detalle_expensa' expensa.id %}">
+                <button type="submit">ver Detalle</button>
+            </a>
+        </td>
     </tr>
     {% endfor %}
 </table>

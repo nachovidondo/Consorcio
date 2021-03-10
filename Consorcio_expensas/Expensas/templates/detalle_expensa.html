@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2 align="center">Listado de Detalle de Expensa </h2>
+
+<br>
+<table class="default" border="3" align="center">
+
+
+    <tr>
+
+        <th>Edificio</th>
+
+        <th>Departamento</th>
+
+        <th>Total Deuda</th>
+
+    </tr>
+
+
+
+    <tr>
+        <td>
+            {{expensas.edificio_expensa}}
+        </td>
+        <td>
+            {{expensas.depto_ph}}
+        </td>
+        <td>
+            {{expensas.total_gastos}}
+        </td>
+        <td>
+            <a href="{% url 'editar_expensa' expensas.id %}" class="btn btn-info"><button>Editar</button></a>
+        </td>
+
+
+
+    </tr>
+</table>
+
+{% endblock %}
