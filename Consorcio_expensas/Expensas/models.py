@@ -6,7 +6,7 @@ from Administracion.models import Departamento,Edificio
  
 class Expensas(models.Model):
  
-    
+    ph_dpto = models.ForeignKey(Departamento,on_delete=models.CASCADE,related_name="PH")
     edificio_expensa= models.ForeignKey(Edificio,on_delete=models.CASCADE,verbose_name="Edificio",blank = True, null = True)
     # Monto Ingresos
     expensas_puras = models.FloatField(verbose_name="Expensas Puras",blank = True, null = True)
@@ -45,4 +45,9 @@ class Expensas(models.Model):
         
     def __str__(self):
         return self.expensa
-        
+    
+    def get_total_gastos(self):
+        return self.total_gastos * self.porcentaja_departamento.porcentaje_correspondiente  
+    
+    def get_total_ingresos(self):
+        return self.expensas_puras + self.intereses_mora

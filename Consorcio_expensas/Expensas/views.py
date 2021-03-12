@@ -2,9 +2,15 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView
 from Expensas.forms import ExpensasForm
 from django.shortcuts import render
-from django.views.generic import CreateView,ListView,UpdateView
+from django.views.generic import CreateView,ListView,UpdateView,View
 from django.urls import reverse_lazy
 from .models import Expensas
+from django.http import HttpResponse
+from django.template.loader import get_template
+from django.http.response import HttpResponseRedirect
+from xhtml2pdf import pisa
+from Consorcio_expensas.utils import render_to_pdf 
+
 
 # Create your views here.
 
@@ -30,3 +36,24 @@ class ExpensasDetailView(DetailView):
     model = Expensas
     template_name ="detalle_expensa.html"
     context_object_name ="expensas"
+
+
+    
+class ExpensasPDFDetail(View):
+    
+    def get(self, request,*args,**kwargs):
+        template = get_template('expensa_pdf.html')
+        context = {}
+        context['expensas'] = Expensas.objects.all()
+        html = template.render(context)
+        pdf = render_to_pdf('expensa_pdf.html', context)
+        if pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
+            filename = "expensa_pdf_%s.pdf" %("1")
+            content = "inline; filename='%s'" %(filename)
+            download = request.GET.get("download")
+            if download:
+                content = "attachment; filename='%s'" %(filename)
+            response['Content-Disposition'] = content
+            return response
+        return HttpResponse("Not found")

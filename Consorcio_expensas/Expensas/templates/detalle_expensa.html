@@ -20,14 +20,20 @@
 
     <tr>
         <td>
-            {{expensas.edificio_expensa}}
+            {{expensas.ph_dpto}}
         </td>
         <td>
-            {{expensas.depto_ph}}
+            {{expensas.porcentaja_departamento}}
         </td>
         <td>
             {{expensas.total_gastos}}
         </td>
+        <td>
+            {{expensas.get_total_gastos}}
+        </td>
+
+
+
         <td>
             <a href="{% url 'editar_expensa' expensas.id %}" class="btn btn-info"><button>Editar</button></a>
         </td>

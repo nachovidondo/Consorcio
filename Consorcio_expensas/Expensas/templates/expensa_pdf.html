@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+    .head {
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    #invoice thead tr th {
+        text-align: left;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding-top: 4px;
+    }
+    
+    #invoice thead tr {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    #invoice tbody tr {
+        padding: 0;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+</style>
+
+
+<header>
+    <h1 align="center">Liquidacion de Expensas Comunes</h1>
+</header>
+
+<body>
+    <img src="" class="img-invoice">
+    <p class="head">
+        <br> <br>
+    </p>
+    <p>
+        <b>EDIFICIO:</b>{{departamento_expensa}}<br>
+        <b>PH: </b>{{ph}}<br>
+        <b>MES: </b> {{edificio_expensa}}<br>
+        <b>FONDO DE RESERVA: </b> {{edificio_expensa}}<br>
+
+    </p>
+    {% for expensa in expensas %}
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3"> DETALLE DE INGRESOS</th>
+
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr style="border-top: 1px solid black; padding-top: 15px;">
+                <th colspan="2" style="text-align: left "><b> Expensas Puras</b></th>
+
+                <td>{{expensa.expensas_puras}}</td>
+            </tr>
+            <tr style="padding-top: 5px;">
+                <th colspan="2" style="text-align: left "><b>Intereses por Mora</b></th>
+
+                <td>{{expensa.intereses_mora}}</td>
+            </tr>
+            <tr style="padding-top: 5px;">
+                <th colspan="2 " style="text-align: left "><b>TOTAL INGRESOS</b></th>
+                <td>{{expensa.total_ingresos}}</td>
+            </tr>
+
+
+
+        </tbody>
+
+        <thead>
+            <tr>
+                <th colspan="3" style="padding-top: 30px; ">EGRESOS</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Materiales de limpieza</b></th>
+                <th style="text-align: right "></th>
+                <td>{{expensa.materiales_limpieza}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Servicios de Electricidad (EPEC)</b></th>
+                <th style="text-align: right "></th>
+                <td>{{servicios_luz}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Honorarios Administrador</b></th>
+                <th style="text-align: right "></th>
+                <td>{{sueldo_administrador}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Honorarios Encargado Limpieza</b></th>
+                <th style="text-align: right "></th>
+                <td>{{sueldo_encargado_limpieza}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Aportes y Retenciones Enc.Limpieza</b></th>
+                <th style="text-align: right "></th>
+                <td>{{aportes_encargado_limpieza}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Seguro de Edificio</b></th>
+                <th style="text-align: right "></th>
+                <td>{{seguro_edificio}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Service Ascensores</b></th>
+                <th style="text-align: right "></th>
+                <td>{{ascensores}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Sueldo Anual Complementario</b></th>
+                <th style="text-align: right "></th>
+
+                <td>{{sueldo_anual_complementario}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Sueldo Anual Complementario</b></th>
+                <th style="text-align: right "></th>
+
+                <td>{{sueldo_anual_complementario}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Servicios de Electricidad (EPEC)</b></th>
+                <th style="text-align: right "></th>
+                <td>{{servicios_luz}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Sueldo Anual Complementario</b></th>
+                <th style="text-align: right "></th>
+
+                <td>{{sueldo_anual_complementario}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Sueldo Anual Complementario</b></th>
+                <th style="text-align: right "></th>
+
+                <td>{{sueldo_anual_complementario}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Sueldo Anual Complementario</b></th>
+                <th style="text-align: right "></th>
+
+                <td>{{sueldo_anual_complementario}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Sueldo Anual Complementario</b></th>
+                <th style="text-align: right "></th>
+
+                <td>{{sueldo_anual_complementario}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Sueldo Anual Complementario</b></th>
+                <th style="text-align: right "></th>
+
+                <td>{{sueldo_anual_complementario}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Sueldo Anual Complementario</b></th>
+                <th style="text-align: right "></th>
+
+                <td>{{sueldo_anual_complementario}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Sueldo Anual Complementario</b></th>
+                <th style="text-align: right "></th>
+
+                <td>{{sueldo_anual_complementario}}</td>
+            </tr>
+            <tr style="border-top: 1px solid black; padding-top: 4px; ">
+                <th colspan="2 "><b>Sueldo Anual Complementario</b></th>
+                <th style="text-align: right "></th>
+
+                <td>{{sueldo_anual_complementario}}</td>
+            </tr>
+
+            <hr>
+        </tbody>
+
+
+    </table>
+
+    <table style="padding-top:  10px;" <thead>
+        <tr>
+            <th colspan="2 " style="text-align: left "><b>TOTAL EGRESOS</b></th>
+
+            <td colspan="2 ">{{expensa.total_gastos}}</td>
+        </tr>
+
+        <tr>
+            <th colspan="2 " style="text-align: left ">
+                Diferencias entre Ingreso y Egreso
+            </th>
+            <td colspan=" 2 ">992129</td>
+        </tr>
+        </thead>
+    </table>
+
+
+    <table style="padding-top:  10px;">
+        <thead>
+
+            <tr>
+                <th colspan=" 2 " style="text-align: left "> INGRESOS</th>
+
+
+                <td colspan="2 ">
+                    3434
+                </td>
+            </tr>
+            <th colspan="2 " style="text-align: left ">EGRESOS</th>
+
+
+            <td colspan="2 ">
+                3434
+            </td>
+            </tr>
+            </tr>
+            <th colspan="2 " style="text-align: left ">Prevision de Gastos proximo mes</th>
+
+
+            <td colspan="2 ">
+                4343434
+            </td>
+            </tr>
+
+
+        </thead>
+    </table>
+    <table style="padding-top:  30px;">
+        <tr>
+            <th style="text-align: left ">
+                <h2>El importe a pagar es de </h2>
+            </th>
+            <td>
+                <h2> {{expensa.total_gastos}}</h2>
+            </td>
+        </tr>
+    </table>
+    {% endfor %}
+
+
+    <p><span>REGISTRO DEUDA:</span> <span> $<b></b></span></p>
+
+
+</body>
+
+</html>

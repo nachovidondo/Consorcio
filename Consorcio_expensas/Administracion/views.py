@@ -41,22 +41,6 @@ class DepartamentoUpdateView(UpdateView):
     form_class = DepartamentoForm
     success_url = reverse_lazy('detalle_edificio')
 
-class Expensa(View):
-    def get(self,request,*args,**kwargs):
-        try:
-            template = get_template('expensa.html')
-            context={'title': 'Mi primer PDF'}
-            html = template.render(context)
-            response = HttpResponse(content_type ='application/pdf')
-            #response ['Content-Disposition'] = 'attachment; filename = "report.pdf"'
-            # create a pdf
-            pisa_status = pisa.CreatePDF(
-            html, dest=response)
-            return response
-             
-        except :
-            pass
-        return HttpResponseRedirect(reverse_lazy('index'))
-    
+
     
         

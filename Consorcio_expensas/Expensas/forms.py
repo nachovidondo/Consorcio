@@ -6,11 +6,6 @@ class ExpensasForm(forms.ModelForm):
         model = Expensas
         fields ='__all__'
         labels = {
-            'ph' : 'Ph del departamento',
-            'deuda_mes' : 'Deuda del mes',
-            'total_deuda' : 'Total Deuda',
-        }
-        labels = {
             'depto_ph': 'Ph del Departamento',
             'edificio_expensa':'Edificio',
             'expensas_puras': 'Expensas Puras',
